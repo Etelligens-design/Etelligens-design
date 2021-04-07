@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="6dp"
+    android:elevation="3dp"
+    app:cardCornerRadius="5dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/grey_blue"
+        android:paddingBottom="10dp">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/line1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/iv_profile"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="6dp"
+            android:src="@drawable/icon_profile"
+            app:layout_constraintLeft_toLeftOf="@id/line1"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="10dp"
+            android:text="Maintanance"
+            android:textColor="@color/grey_dark"
+            android:textSize="13dp"
+            app:layout_constraintLeft_toRightOf="@id/iv_profile"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_role"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="2dp"
+            android:text="Maintanance"
+            android:textColor="@color/grey_dark"
+            android:textSize="13dp"
+            app:layout_constraintLeft_toRightOf="@id/iv_profile"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_name" />
+
+        <com.pch.ete.ui.incoming_request.VerticalTextView
+            android:id="@+id/tv_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="12/MAY/2020"
+            android:textColor="@color/dark_red"
+            android:textSize="15dp"
+            app:layout_constraintBottom_toBottomOf="@id/line_vertical"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/line_vertical"
+            app:layout_constraintTop_toTopOf="@id/line_vertical" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/line2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.08" />
+
+        <View
+            android:id="@+id/line_vertical"
+            android:layout_width="3dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="3dp"
+            android:background="@color/white"
+            app:layout_constraintBottom_toBottomOf="@id/tv_appointment_date"
+            app:layout_constraintLeft_toRightOf="@id/line2"
+            app:layout_constraintTop_toTopOf="@id/tv_sr_id" />
+
+        <TextView
+            android:id="@+id/tv_sr_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="6dp"
+            android:layout_marginTop="6dp"
+            android:text="SR#3223"
+            android:textColor="@color/colorPrimary"
+            android:textSize="15dp"
+            app:layout_constraintLeft_toRightOf="@id/line_vertical"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_fire"
+            android:layout_width="24dp"
+            android:visibility="gone"
+            android:layout_height="24dp"
+            android:layout_marginTop="3dp"
+            android:src="@drawable/icon_fire"
+            app:layout_constraintLeft_toRightOf="@id/tv_sr_id"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_status_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:text="@string/status"
+            android:textColor="@color/text_color"
+            android:textSize="14dp"
+            app:layout_constraintRight_toLeftOf="@id/btn_status"
+            app:layout_constraintLeft_toLeftOf="@id/tv_sr_id"
+            app:layout_constraintTop_toBottomOf="@id/tv_sr_id" />
+
+        <Button
+            android:id="@+id/btn_status"
+            android:layout_width="70dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/round_dark_green_rect"
+            android:text="@string/accepted"
+            android:textColor="@color/white"
+            android:textSize="10dp"
+            app:layout_constraintLeft_toRightOf="@id/tv_status_title"
+            app:layout_constraintRight_toLeftOf="@id/iv_profile"
+            app:layout_constraintTop_toBottomOf="@id/tv_sr_id" />
+
+        <TextView
+            android:id="@+id/tv_asset_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:text="@string/asset_name"
+            android:textColor="@color/text_color"
+            android:textSize="14dp"
+            app:layout_constraintLeft_toLeftOf="@id/tv_sr_id"
+            app:layout_constraintTop_toBottomOf="@id/tv_status_title" />
+
+        <TextView
+            android:id="@+id/tv_asset_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="Plant 1, Weld, A-Zone, RB12B"
+            android:textColor="@color/grey_dark"
+            android:textSize="13dp"
+            app:layout_constraintLeft_toLeftOf="@id/tv_status_title"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_asset_title" />
+
+        <TextView
+            android:id="@+id/tv_appointment_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:text="@string/next_appointment_"
+            android:textColor="@color/text_color"
+            android:textSize="14dp"
+            app:layout_constraintLeft_toLeftOf="@id/tv_sr_id"
+            app:layout_constraintTop_toBottomOf="@id/tv_asset_name" />
+
+        <TextView
+            android:id="@+id/tv_appointment_date"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="15/May/2020 15:00"
+            android:textColor="@color/grey_dark"
+            android:textSize="13dp"
+            app:layout_constraintLeft_toLeftOf="@id/tv_appointment_title"
+            app:layout_constraintRight_toLeftOf="@id/btn_join"
+            app:layout_constraintTop_toBottomOf="@id/tv_appointment_title" />
+
+        <Button
+            android:id="@+id/btn_join"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/round_light_grey_rect"
+            android:paddingHorizontal="15dp"
+            android:text="@string/join_now"
+            android:textColor="@color/white"
+            android:textSize="14dp"
+            android:textStyle="bold"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/tv_appointment_date"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

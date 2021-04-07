@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.login.LoginActivity">
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="35dp"
+        android:gravity="center"
+        android:text="@string/account_profile"
+        android:textAllCaps="true"
+        android:textColor="@color/black"
+        android:textSize="17dp" />
+
+    <ImageView
+        android:id="@+id/iv_back"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="30dp"
+        android:src="@drawable/icon_black_left_arrow2" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/iv_profile"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_below="@id/tv_title"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:src="@drawable/eyelogo"
+        app:civ_border_color="@color/grey_dark"
+        app:civ_border_width="3dp" />
+
+    <ImageView
+        android:id="@+id/iv_edit_profile_image"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_alignTop="@id/iv_profile"
+        android:layout_alignRight="@id/iv_profile"
+        android:layout_marginTop="45dp"
+        android:layout_marginRight="-15dp"
+        android:src="@drawable/icon_orange_photo" />
+
+    <EditText
+        android:id="@+id/et_user_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/iv_profile"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:layout_marginHorizontal="75dp"
+        android:layout_marginTop="10dp"
+        android:hint="@string/full_name"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/iv_edit_user_name"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_alignBottom="@id/et_user_name"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="40dp"
+        android:layout_marginBottom="10dp"
+        android:src="@drawable/icon_edit_name" />
+
+    <EditText
+        android:id="@+id/et_role"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/et_user_name"
+        android:layout_centerHorizontal="true"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:hint="@string/input_role"
+        android:inputType="text"
+        android:maxLength="64"
+        android:textColor="@color/black"
+        android:textSize="16dp" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/et_role"
+        android:layout_marginTop="10dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tab_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:tabIndicatorColor="@color/blue"
+                app:tabTextAppearance="@style/MyCustomTabTextAppearance" />
+
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/profile_pager"
+                android:layout_width="match_parent"
+                android:layout_height="450dp"
+                android:layout_below="@id/tab_layout" />
+
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>

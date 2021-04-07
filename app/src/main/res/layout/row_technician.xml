@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="5dp"
+    android:layout_marginVertical="8dp">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/iv_profile"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_margin="6dp"
+            android:src="@drawable/icon_profile" />
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="5dp"
+            android:layout_toLeftOf="@id/btn_view"
+            android:layout_toRightOf="@id/iv_profile"
+            android:text="Maintanance"
+            android:textColor="@color/grey_dark"
+            android:textSize="15dp" />
+
+        <TextView
+            android:id="@+id/btn_delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dp"
+            android:padding="5dp"
+            android:text="@string/delete"
+            android:textColor="@color/orange"
+            android:textSize="15dp" />
+
+        <TextView
+            android:id="@+id/btn_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dp"
+            android:layout_toLeftOf="@id/btn_delete"
+            android:padding="5dp"
+            android:text="@string/view"
+            android:textColor="@color/orange"
+            android:textSize="16dp" />
+
+        <ImageView
+            android:id="@+id/iv_gold_ribbon"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_below="@id/tv_name"
+            android:layout_marginRight="12dp"
+            android:layout_toRightOf="@id/iv_silver_ribbon"
+            android:src="@drawable/icon_gold_ribbon"
+            android:visibility="invisible" />
+
+        <ImageView
+            android:id="@+id/iv_silver_ribbon"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_below="@id/tv_name"
+            android:layout_marginRight="5dp"
+            android:layout_toRightOf="@id/iv_iron_ribbon"
+            android:src="@drawable/icon_silver_ribbon"
+            android:visibility="invisible" />
+
+        <ImageView
+            android:id="@+id/iv_iron_ribbon"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_below="@id/tv_name"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="5dp"
+            android:layout_toRightOf="@id/iv_profile"
+            android:src="@drawable/icon_blue_ribbon"
+            android:visibility="invisible" />
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/iv_back"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="30dp"
+        android:padding="5dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/icon_black_left_arrow2" />
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:layout_marginTop="36dp"
+        android:text="@string/add_technical_note"
+        android:textAllCaps="true"
+        android:textColor="@color/black"
+        android:textSize="14dp" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="90dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/tv_note_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="15dp"
+                android:text="@string/title"
+                android:textColor="@color/text_gray_color"
+                android:textSize="15dp" />
+
+            <EditText
+                android:id="@+id/et_note_title"
+                style="@style/EditTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp45"
+                android:layout_below="@id/tv_note_title"
+                android:layout_marginHorizontal="15dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/round_grey_border_5dp"
+                android:gravity="center_vertical"
+                android:hint="@string/how_to_fix_this_issue"
+                android:inputType="textPersonName"
+                android:paddingHorizontal="10dp"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/tv_file_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/et_note_title"
+                android:layout_gravity="center"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="15dp"
+                android:text="@string/text_file"
+                android:textColor="@color/text_gray_color"
+                android:textSize="15dp" />
+
+            <ImageView
+                android:id="@+id/iv_add_file"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginLeft="10dp"
+                android:layout_below="@id/tv_file_title"
+                android:src="@drawable/icon_add_text_file" />
+
+            <TextView
+                android:id="@+id/tv_file_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_file_title"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_toRightOf="@id/iv_add_file"
+                android:text="Select text file to upload"
+                android:textColor="@color/black"
+                android:textSize="15dp" />
+
+            <TextView
+                android:id="@+id/tv_description_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/iv_add_file"
+                android:layout_gravity="center"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="15dp"
+                android:text="@string/text"
+                android:textColor="@color/text_gray_color"
+                android:textSize="15dp" />
+
+            <EditText
+                android:id="@+id/et_note_description"
+                style="@style/EditTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:layout_below="@id/tv_description_title"
+                android:layout_marginHorizontal="15dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/round_grey_border_5dp"
+                android:gravity="top"
+                android:hint="@string/enter_note"
+                android:inputType="textMultiLine"
+                android:maxLength="300"
+                android:padding="10dp"
+                android:paddingHorizontal="10dp"
+                android:textColor="@color/black" />
+
+            <Button
+                android:id="@+id/btn_add_note"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_below="@id/et_note_description"
+                android:layout_centerHorizontal="true"
+                android:layout_marginHorizontal="25dp"
+                android:layout_marginVertical="20dp"
+                android:background="@drawable/round_dark_red_rect"
+                android:text="@string/add_note"
+                android:textColor="@color/white"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+
+
+        </RelativeLayout>
+    </ScrollView>
+    <!--        </LinearLayout>-->
+</RelativeLayout>

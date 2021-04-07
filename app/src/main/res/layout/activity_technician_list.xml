@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/iv_back"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="30dp"
+        android:padding="5dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/icon_black_left_arrow2" />
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:layout_marginTop="36dp"
+        android:text="@string/my_technician_network"
+        android:textAllCaps="true"
+        android:textColor="@color/black"
+        android:textSize="16dp" />
+
+    <LinearLayout
+        android:id="@+id/li_search_txt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_title"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/round_grey_bottom_border"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <!--        <EditText-->
+        <!--            android:id="@+id/et_search_txt"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_weight="1"-->
+        <!--            android:background="@color/transparent"-->
+        <!--            android:hint="@string/search_for_technician"-->
+        <!--            android:paddingVertical="10dp"-->
+        <!--            android:textSize="15dp" />-->
+
+        <pl.sly.dynamicautocomplete.DynamicAutoCompleteTextView
+            android:id="@+id/auto_technician_name"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp45"
+            android:layout_below="@id/tv_user_name_title"
+            android:layout_weight="1"
+            android:background="@color/transparent"
+            android:gravity="center_vertical"
+            android:hint="@string/search_for_technician"
+            android:imeOptions="actionDone"
+            android:paddingHorizontal="10dp"
+            android:singleLine="true"
+            android:textColor="@color/black"
+            android:textSize="15dp" />
+
+        <ImageView
+            android:id="@+id/iv_add_new_vendor"
+            android:layout_width="34dp"
+            android:layout_height="34dp"
+            android:src="@drawable/icon_orange_plus_circle" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_search_filter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/li_search_txt"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/search_filters"
+        android:textColor="@color/grey_dark"
+        android:textSize="15dp" />
+
+    <com.nex3z.flowlayout.FlowLayout
+        android:id="@+id/fl_filters"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_search_filter"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/round_grey_bottom_border">
+
+        <Button
+            android:id="@+id/btn_add_skill"
+            android:layout_width="wrap_content"
+            android:layout_height="33dp"
+            android:layout_below="@id/fl_filters"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/round_orange_rect"
+            android:paddingHorizontal="10dp"
+            android:text="@string/add_more"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="12dp" />
+    </com.nex3z.flowlayout.FlowLayout>
+
+    <TextView
+        android:id="@+id/tv_my_network"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/fl_filters"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/my_network"
+        android:textColor="@color/grey_dark"
+        android:textSize="15dp" />
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipe_refresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/tv_my_network"
+        android:minHeight="300dp">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_technician"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:padding="10dp" />
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    <TextView
+        android:id="@+id/tv_empty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/swipe_refresh"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:text="@string/empty"
+        android:textColor="@color/text_color"
+        android:textSize="14dp"
+        android:visibility="gone" />
+
+
+</RelativeLayout>

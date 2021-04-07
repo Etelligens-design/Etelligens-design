@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.login.LoginActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <ImageView
+                android:id="@+id/iv_back"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="30dp"
+                android:padding="5dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/icon_black_left_arrow2" />
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:layout_marginTop="36dp"
+                android:text="@string/edit_equipment"
+                android:textAllCaps="true"
+                android:textColor="@color/black"
+                android:textSize="16dp" />
+
+            <TextView
+                android:id="@+id/tv_location_of_equipment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_title"
+                android:layout_gravity="center"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="30dp"
+                android:text="@string/location_of_equipment"
+                android:textColor="@color/text_gray_color"
+                android:textSize="15dp" />
+
+            <EditText
+                android:id="@+id/et_location_equipment"
+                style="@style/EditTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp45"
+                android:layout_below="@id/tv_location_of_equipment"
+                android:layout_marginHorizontal="15dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/round_grey_border_5dp"
+                android:gravity="center_vertical"
+                android:hint="@string/location"
+                android:inputType="textPostalAddress"
+                android:paddingHorizontal="10dp"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/tv_asset_name_equipment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/et_location_equipment"
+                android:layout_gravity="center"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="20dp"
+                android:text="@string/equipment_asset_name"
+                android:textColor="@color/text_gray_color"
+                android:textSize="15dp" />
+
+            <EditText
+                android:id="@+id/et_asset_name_equipment"
+                style="@style/EditTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp45"
+                android:layout_below="@id/tv_asset_name_equipment"
+                android:layout_marginHorizontal="15dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/round_grey_border_5dp"
+                android:gravity="center_vertical"
+                android:hint="@string/asset_name"
+                android:inputType="text"
+                android:paddingHorizontal="10dp"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/tv_internal_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/et_asset_name_equipment"
+                android:layout_gravity="center"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="20dp"
+                android:text="@string/internal_equipment_id"
+                android:textColor="@color/text_gray_color"
+                android:textSize="15dp" />
+
+            <EditText
+                android:id="@+id/et_internal_id"
+                style="@style/EditTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp45"
+                android:layout_below="@id/tv_internal_id"
+                android:layout_marginHorizontal="15dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/round_grey_border_5dp"
+                android:gravity="center_vertical"
+                android:hint="@string/internal_equipment_id"
+                android:inputType="text"
+                android:paddingHorizontal="10dp"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/tv_title_make"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/et_internal_id"
+                android:layout_gravity="center"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="20dp"
+                android:text="@string/make"
+                android:textColor="@color/text_gray_color"
+                android:textSize="15dp" />
+
+            <TextView
+                android:id="@+id/tv_make_equipment"
+                style="@style/EditTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp45"
+                android:layout_below="@id/tv_title_make"
+                android:layout_marginHorizontal="15dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/round_grey_border_5dp"
+                android:drawableEnd="@drawable/icon_down_arrow"
+                android:gravity="center_vertical"
+                android:hint="@string/make"
+                android:inputType="textPersonName"
+                android:paddingHorizontal="10dp"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/tv_title_model"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_make_equipment"
+                android:layout_gravity="center"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="15dp"
+                android:text="@string/model"
+                android:textColor="@color/text_gray_color"
+                android:textSize="15dp" />
+
+            <TextView
+                android:id="@+id/tv_model_equipment"
+                style="@style/EditTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp45"
+                android:layout_below="@id/tv_title_model"
+                android:layout_marginHorizontal="15dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/round_grey_border_5dp"
+                android:drawableEnd="@drawable/icon_down_arrow"
+                android:gravity="center_vertical"
+                android:hint="@string/model"
+                android:inputType="textEmailAddress"
+                android:paddingHorizontal="10dp"
+                android:textColor="@color/black" />
+
+            <LinearLayout
+                android:id="@+id/li_warranty"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_model_equipment"
+                android:layout_marginHorizontal="15dp"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:text="@string/warranty_start_date"
+                        android:textColor="@color/text_gray_color"
+                        android:textSize="12dp" />
+
+                    <TextView
+                        android:id="@+id/et_warranty_start_date"
+                        style="@style/EditTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp45"
+                        android:layout_marginRight="20dp"
+                        android:background="@drawable/round_grey_border_5dp"
+                        android:gravity="center"
+                        android:hint="DD/MM/YYYY"
+                        android:paddingHorizontal="10dp"
+                        android:textColor="@color/black" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:text="@string/warranty_period"
+                        android:textColor="@color/text_gray_color"
+                        android:textSize="12dp" />
+
+                    <EditText
+                        android:id="@+id/et_warranty_period"
+                        style="@style/EditTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp45"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/round_grey_border_5dp"
+                        android:gravity="center"
+                        android:inputType="number"
+                        android:maxLength="3"
+                        android:hint="1"
+                        android:paddingHorizontal="10dp"
+                        android:textColor="@color/black" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btn_save_equipment"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_below="@id/li_warranty"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="40dp"
+                android:background="@drawable/round_orange_rect"
+                android:gravity="center"
+                android:text="@string/save"
+                android:textColor="@color/white"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+
+
+        </RelativeLayout>
+        <!--        </LinearLayout>-->
+    </ScrollView>
+</RelativeLayout>

@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.login.LoginActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <ImageView
+                android:id="@+id/iv_back"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="30dp"
+                android:padding="5dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/icon_black_left_arrow2" />
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:layout_marginTop="36dp"
+                android:text="@string/add_competence"
+                android:textAllCaps="true"
+                android:textColor="@color/black"
+                android:textSize="16dp" />
+
+            <TextView
+                android:id="@+id/tv_title_make"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_title"
+                android:layout_gravity="center"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="30dp"
+                android:text="@string/make_of_the_equipment"
+                android:textColor="@color/text_gray_color"
+                android:textSize="15dp" />
+
+            <TextView
+                android:id="@+id/tv_make_equipment"
+                style="@style/EditTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp45"
+                android:layout_below="@id/tv_title_make"
+                android:layout_marginHorizontal="25dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/round_grey_border_5dp"
+                android:drawableEnd="@drawable/icon_down_arrow"
+                android:gravity="center_vertical"
+                android:hint="@string/make"
+                android:inputType="textPersonName"
+                android:paddingHorizontal="10dp"
+                android:textColor="@color/black" />
+
+
+            <TextView
+                android:id="@+id/tv_title_model"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_make_equipment"
+                android:layout_gravity="center"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="15dp"
+                android:text="@string/equipment_model_number"
+                android:textColor="@color/text_gray_color"
+                android:textSize="15dp" />
+
+            <TextView
+                android:id="@+id/tv_model_number"
+                style="@style/EditTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp45"
+                android:layout_below="@id/tv_title_model"
+                android:layout_marginHorizontal="25dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/round_grey_border_5dp"
+                android:drawableEnd="@drawable/icon_down_arrow"
+                android:gravity="center_vertical"
+                android:hint="@string/equipment"
+                android:inputType="textEmailAddress"
+                android:paddingHorizontal="10dp"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/tv_title_skill"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_model_number"
+                android:layout_gravity="center"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="15dp"
+                android:text="@string/skills"
+                android:textColor="@color/text_gray_color"
+                android:textSize="15dp" />
+
+            <TextView
+                android:id="@+id/tv_skill"
+                style="@style/EditTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp45"
+                android:layout_below="@id/tv_title_skill"
+                android:layout_marginHorizontal="25dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/round_grey_border_5dp"
+                android:drawableEnd="@drawable/icon_down_arrow"
+                android:gravity="center_vertical"
+                android:hint="@string/skills"
+                android:inputType="textEmailAddress"
+                android:paddingHorizontal="10dp"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/tv_certified_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_skill"
+                android:layout_gravity="center"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="20dp"
+                android:layout_toLeftOf="@id/iv_blue_ribbon"
+                android:text="@string/have_certified"
+                android:textColor="@color/text_gray_color"
+                android:textSize="15dp" />
+
+            <ImageView
+                android:id="@+id/iv_blue_ribbon"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_below="@id/tv_skill"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="65dp"
+                android:src="@drawable/icon_blue_ribbon" />
+
+            <Button
+                android:id="@+id/btn_upload_certified_doc"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_below="@id/iv_blue_ribbon"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="15dp"
+                android:background="@drawable/round_orange_rect"
+                android:paddingHorizontal="10dp"
+                android:text="@string/upload_document"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="12dp" />
+
+            <RadioGroup
+                android:id="@+id/radios_certified"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_certified_title"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/radio_certified_yes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="20dp"
+                    android:text="@string/yes" />
+
+                <RadioButton
+                    android:id="@+id/radio_certified_no"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="@string/no" />
+
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/tv_authorized_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/btn_upload_certified_doc"
+                android:layout_gravity="center"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="20dp"
+                android:layout_toLeftOf="@id/iv_blue_ribbon"
+                android:text="@string/authorized_technician"
+                android:textColor="@color/text_gray_color"
+                android:textSize="15dp" />
+
+            <ImageView
+                android:id="@+id/iv_silver_ribbon"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_below="@id/btn_upload_certified_doc"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="65dp"
+                android:src="@drawable/icon_silver_ribbon" />
+
+            <Button
+                android:id="@+id/btn_upload_authorized_doc"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_below="@id/iv_silver_ribbon"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="15dp"
+                android:background="@drawable/round_orange_rect"
+                android:paddingHorizontal="10dp"
+                android:text="@string/upload_document"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="12dp" />
+
+            <RadioGroup
+                android:id="@+id/radios_authorized"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_authorized_title"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/radio_authorized_yes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="20dp"
+                    android:text="@string/yes" />
+
+                <RadioButton
+                    android:id="@+id/radio_authorized_no"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="@string/no" />
+
+            </RadioGroup>
+
+            <LinearLayout
+                android:id="@+id/li_experted_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/btn_upload_authorized_doc"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="22dp"
+                android:layout_toLeftOf="@id/iv_blue_ribbon"
+                android:gravity="center_vertical|left"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_you_are"
+                    android:layout_width="wrap_content"
+                    android:layout_height="32dp"
+                    android:layout_gravity="center"
+                    android:gravity="center_vertical"
+                    android:text="@string/text_expert_1"
+                    android:textColor="@color/text_gray_color"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:id="@+id/tv_service_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="5dp"
+                    android:background="@drawable/round_grey_bottom_border"
+                    android:gravity="center"
+                    android:includeFontPadding="false"
+                    android:inputType="number"
+                    android:maxLength="4"
+                    android:paddingVertical="4dp"
+                    android:text="40"
+                    android:textColor="@color/black"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:id="@+id/tv_hour"
+                    android:layout_width="wrap_content"
+                    android:layout_height="32dp"
+                    android:gravity="center_vertical"
+                    android:text="@string/text_expert_2"
+                    android:textColor="@color/text_gray_color"
+                    android:textSize="15dp" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_last_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/li_experted_title"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="25dp"
+                android:layout_marginBottom="30dp"
+                android:text="@string/text_expert_3"
+                android:textColor="@color/text_gray_color"
+                android:textSize="15dp" />
+
+
+            <ImageView
+                android:id="@+id/iv_gold_ribbon"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_below="@id/btn_upload_authorized_doc"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="24dp"
+                android:layout_marginRight="65dp"
+                android:src="@drawable/icon_gold_ribbon" />
+
+            <Button
+                android:id="@+id/btn_save_skill"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_below="@id/tv_last_txt"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginBottom="40dp"
+                android:background="@drawable/round_orange_rect"
+                android:gravity="center"
+                android:text="@string/save"
+                android:textColor="@color/white"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+        <!--        </LinearLayout>-->
+    </ScrollView>
+</RelativeLayout>

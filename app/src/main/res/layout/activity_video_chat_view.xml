@@ -1,0 +1,796 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/remote_video_view_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/remoteBackground">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/icon_padding">
+
+            <ImageView
+                android:layout_width="@dimen/remote_back_icon_size"
+                android:layout_height="@dimen/remote_back_icon_size"
+                android:layout_centerInParent="true"
+                android:src="@drawable/eyelogo" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/icon_padding"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/remote_back_icon_margin_bottom"
+            android:layout_alignParentBottom="true" />
+    </RelativeLayout>
+
+    <FrameLayout
+        android:id="@+id/local_video_view_container"
+        android:layout_width="@dimen/local_preview_width"
+        android:layout_height="@dimen/local_preview_height"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:background="@color/localBackground"
+        android:onClick="onLocalContainerClick">
+
+        <ImageView
+            android:layout_width="@dimen/local_back_icon_size"
+            android:layout_height="@dimen/local_back_icon_size"
+            android:layout_gravity="center"
+            android:scaleType="centerCrop"
+            android:src="@drawable/eyelogo" />
+    </FrameLayout>
+
+    <LinearLayout
+        android:id="@+id/control_panel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="#615D5D"
+        android:orientation="vertical"
+        android:paddingHorizontal="15dp"
+        android:paddingVertical="15dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/round_white_rect_5dp"
+            android:orientation="horizontal"
+            android:padding="2dp"
+            android:weightSum="5">
+
+            <RelativeLayout
+                android:id="@+id/rl_setting_menu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="1dp"
+                android:layout_weight="1"
+                android:background="@color/grey_light">
+
+                <ImageView
+                    android:id="@+id/iv_setting_menu"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_centerInParent="true"
+                    android:layout_marginVertical="12dp"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/icon_setting_grey" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_record_menu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="1dp"
+                android:layout_weight="1"
+                android:background="@color/grey_light">
+
+                <ImageView
+                    android:id="@+id/iv_record_menu"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_centerInParent="true"
+                    android:layout_marginVertical="12dp"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/icon_record_grey" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_call_menu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="1dp"
+                android:layout_weight="1"
+                android:background="@color/red">
+
+                <ImageView
+                    android:id="@+id/iv_call_menu"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_centerInParent="true"
+                    android:layout_marginVertical="12dp"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/icon_call_start" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_on_off_camera_menu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="1dp"
+                android:layout_weight="1"
+                android:background="@color/grey_light">
+
+                <ImageView
+                    android:id="@+id/iv_on_off_camera_menu"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_centerInParent="true"
+                    android:layout_marginVertical="12dp"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/icon_videocam_off" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/rl_mic_menu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="1dp"
+                android:layout_weight="1"
+                android:background="@color/grey_light"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/iv_mic_menu"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginVertical="12dp"
+                    android:layout_marginRight="1dp"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/icon_mic_on_grey" />
+
+                <ImageView
+                    android:id="@+id/iv_arrow_up"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginVertical="12dp"
+                    android:layout_marginLeft="1dp"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/icon_arrow_up" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/round_white_rect_5dp"
+            android:orientation="horizontal"
+            android:padding="2dp"
+            android:weightSum="5">
+
+            <RelativeLayout
+                android:id="@+id/rl_annotation_menu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="1dp"
+                android:layout_weight="1"
+                android:background="@color/grey_light">
+
+                <ImageView
+                    android:id="@+id/iv_annotation_menu"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_centerInParent="true"
+                    android:layout_marginVertical="12dp"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/icon_annotation_grey" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_share_video_menu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="1dp"
+                android:layout_weight="1"
+                android:background="@color/grey_light">
+
+                <ImageView
+                    android:id="@+id/iv_play_video_menu"
+                    android:layout_width="30dp"
+                    android:layout_height="24dp"
+                    android:layout_centerInParent="true"
+                    android:layout_marginVertical="12dp"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/icon_video_grey" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_chat_menu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="1dp"
+                android:layout_weight="1"
+                android:background="@color/grey_light">
+
+                <ImageView
+                    android:id="@+id/iv_chat_menu"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_centerInParent="true"
+                    android:layout_marginVertical="12dp"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/icon_chat_grey" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_image_sharing_menu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="1dp"
+                android:layout_weight="1"
+                android:background="@color/grey_light">
+
+                <ImageView
+                    android:id="@+id/iv_image_menu"
+                    android:layout_width="30dp"
+                    android:layout_height="24dp"
+                    android:layout_centerInParent="true"
+                    android:layout_marginVertical="12dp"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/icon_image_grey" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_ar_menu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="1dp"
+                android:layout_weight="1"
+                android:background="@color/grey_light">
+
+                <ImageView
+                    android:id="@+id/iv_ar_menu"
+                    android:layout_width="26dp"
+                    android:layout_height="24dp"
+                    android:layout_centerInParent="true"
+                    android:layout_marginVertical="12dp"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/icon_ar_menu" />
+            </RelativeLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/li_camera_settings"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@id/local_video_view_container"
+        android:background="#615D5D"
+        android:orientation="horizontal"
+        android:paddingHorizontal="15dp">
+
+        <ImageView
+            android:id="@+id/iv_fullscreen"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_centerInParent="true"
+            android:layout_marginVertical="8dp"
+            android:layout_marginRight="6dp"
+            android:padding="5dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/icon_full_screen_white" />
+
+        <ImageView
+            android:id="@+id/iv_flash_menu"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_centerInParent="true"
+            android:layout_marginVertical="8dp"
+            android:layout_marginRight="6dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/icon_flash_off" />
+
+        <ImageView
+            android:id="@+id/iv_switch_camera_menu"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_centerInParent="true"
+            android:layout_marginVertical="8dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/icon_switch_camera_white" />
+    </LinearLayout>
+
+    <com.pch.ete.ui.video_call.LoggerRecyclerView
+        android:id="@+id/log_recycler_view"
+        android:layout_width="@dimen/log_container_width"
+        android:layout_height="@dimen/log_container_height"
+        android:layout_above="@id/control_panel"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:layout_marginBottom="@dimen/activity_vertical_margin"
+        android:visibility="gone" />
+
+    <RelativeLayout
+        android:id="@+id/rl_chat"
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        android:layout_alignWithParentIfMissing="true"
+        android:layout_above="@id/control_panel"
+        android:layout_alignParentRight="true"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/round_white_rect_5dp"
+        android:paddingHorizontal="20dp"
+        android:paddingVertical="10dp"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:id="@+id/li_edit_chat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/round_grey_border_5dp"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/message_edittiext"
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:layout_weight="1"
+                android:background="@color/transparent"
+                android:fontFamily="@font/roboto_regular"
+                android:hint="@string/type_here"
+                android:inputType="text"
+                android:lines="1"
+                android:maxLength="100"
+                android:maxLines="1"
+                android:padding="5dp"
+                android:textColor="@color/black"
+                android:textSize="13dp" />
+
+            <ImageView
+                android:id="@+id/btn_send_chat"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:onClick="onClick"
+                android:padding="3dp"
+                android:src="@drawable/icon_sms_send" />
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/message_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/li_edit_chat" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_image_chat"
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        android:layout_alignWithParentIfMissing="true"
+        android:layout_above="@id/control_panel"
+        android:layout_alignParentRight="true"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/round_white_rect_5dp"
+        android:paddingHorizontal="15dp"
+        android:paddingVertical="5dp"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/btn_send_image"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:onClick="onClick"
+            android:src="@drawable/icon_sms_send" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/image_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/btn_send_image" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_video_chat"
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        android:layout_alignWithParentIfMissing="true"
+        android:layout_above="@id/control_panel"
+        android:layout_alignParentRight="true"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/round_white_rect_5dp"
+        android:paddingHorizontal="15dp"
+        android:paddingVertical="5dp"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/btn_send_video"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:onClick="onClick"
+            android:src="@drawable/icon_sms_send" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/video_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/btn_send_video" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_camera_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignWithParentIfMissing="true"
+        android:layout_above="@id/control_panel"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/round_white_rect_5dp"
+        android:paddingHorizontal="15dp"
+        android:paddingVertical="15dp"
+        android:visibility="gone">
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/icon_info_symbol" />
+
+        <TextView
+            android:id="@+id/tv_title_camera_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="32dp"
+            android:layout_marginTop="3dp"
+            android:fontFamily="@font/roboto_regular"
+            android:gravity="center_vertical"
+            android:text="@string/camera_sharing_stopped"
+            android:textColor="@color/black"
+            android:textSize="13dp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2px"
+            android:layout_below="@id/tv_title_camera_info"
+            android:layout_marginTop="15dp"
+            android:background="@color/grey_light" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_record_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignWithParentIfMissing="true"
+        android:layout_above="@id/control_panel"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/round_white_rect_5dp"
+        android:paddingHorizontal="15dp"
+        android:paddingVertical="15dp"
+        android:visibility="gone">
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/icon_info_symbol" />
+
+        <TextView
+            android:id="@+id/tv_title_record_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="32dp"
+            android:layout_marginTop="3dp"
+            android:fontFamily="@font/roboto_regular"
+            android:gravity="center_vertical"
+            android:text="@string/recording_working"
+            android:textColor="@color/black"
+            android:textSize="13dp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2px"
+            android:layout_below="@id/tv_title_record_info"
+            android:layout_marginTop="15dp"
+            android:background="@color/grey_light" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_audio_setting"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignWithParentIfMissing="true"
+        android:layout_above="@id/control_panel"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/round_white_rect_5dp"
+        android:paddingHorizontal="10dp"
+        android:paddingVertical="10dp"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/switch_mute_my_audio"
+            android:layout_alignBottom="@id/switch_mute_my_audio"
+            android:layout_toLeftOf="@id/switch_mute_my_audio"
+            android:fontFamily="@font/roboto_regular"
+            android:gravity="center_vertical"
+            android:text="@string/mute_my_audio"
+            android:textColor="@color/black"
+            android:textSize="15dp"
+            android:textStyle="bold" />
+
+        <Switch
+            android:id="@+id/switch_mute_my_audio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:padding="5dp"
+            android:scaleX="1.3"
+            android:scaleY="1.3" />
+
+        <View
+            android:id="@+id/line"
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_below="@id/switch_mute_my_audio"
+            android:layout_marginVertical="5dp"
+            android:background="@color/grey_dark" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/line"
+            android:layout_alignTop="@id/switch_mute_other_audio"
+            android:layout_alignBottom="@id/switch_mute_other_audio"
+            android:layout_toLeftOf="@id/switch_mute_other_audio"
+            android:fontFamily="@font/roboto_regular"
+            android:gravity="center_vertical"
+            android:text="@string/mute_other_audio"
+            android:textColor="@color/black"
+            android:textSize="15dp"
+            android:textStyle="bold" />
+
+        <Switch
+            android:id="@+id/switch_mute_other_audio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/line"
+            android:layout_alignParentRight="true"
+            android:padding="5dp"
+            android:scaleX="1.3"
+            android:scaleY="1.3" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_video_call_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignWithParentIfMissing="true"
+        android:layout_above="@id/control_panel"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/round_white_rect_5dp"
+        android:paddingHorizontal="10dp"
+        android:paddingVertical="10dp"
+        android:visibility="gone">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/icon_info_symbol" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginLeft="35dp"
+            android:fontFamily="@font/roboto_regular"
+            android:gravity="center_vertical"
+            android:text="@string/join_info"
+            android:textColor="@color/black"
+            android:textSize="13dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_sr_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="6dp"
+            android:layout_marginTop="35dp"
+            android:layout_toLeftOf="@id/iv_copy_sr_id"
+            android:fontFamily="@font/roboto_regular"
+            android:gravity="center_vertical"
+            android:text="@string/service_request_number"
+            android:textColor="@color/grey_dark"
+            android:textSize="12dp" />
+
+        <TextView
+            android:id="@+id/tv_sr_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_sr_title"
+            android:layout_marginLeft="6dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_toLeftOf="@id/iv_copy_sr_id"
+            android:fontFamily="@font/roboto_regular"
+            android:gravity="center_vertical"
+            android:textColor="@color/black"
+            android:textSize="15dp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/iv_copy_sr_id"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_alignBottom="@id/tv_sr_title"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="-10dp"
+            android:src="@drawable/icon_copy_grey" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_exit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignWithParentIfMissing="true"
+        android:layout_above="@id/control_panel"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/round_white_rect_5dp"
+        android:paddingHorizontal="10dp"
+        android:paddingVertical="10dp"
+        android:visibility="gone">
+
+        <ImageView
+            android:layout_width="26dp"
+            android:layout_height="26dp"
+            android:src="@drawable/icon_info_symbol" />
+
+        <TextView
+            android:id="@+id/tv_title_exit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="35dp"
+            android:layout_marginTop="3dp"
+            android:fontFamily="@font/roboto_regular"
+            android:gravity="center_vertical"
+            android:text="@string/want_end_session"
+            android:textColor="@color/black"
+            android:textSize="13dp" />
+
+        <RadioGroup
+            android:id="@+id/radios_end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_title_exit"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="3dp"
+            android:layout_marginRight="15dp"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/radio_end_yes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:checked="true"
+                android:text="@string/yes" />
+
+            <RadioButton
+                android:id="@+id/radio_end_no"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/no" />
+
+        </RadioGroup>
+
+        <View
+            android:id="@+id/line1"
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_below="@id/radios_end"
+            android:layout_marginVertical="6dp"
+            android:background="@color/grey_dark" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/line1"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:src="@drawable/icon_info_symbol" />
+
+            <TextView
+                android:id="@+id/tv_title_state"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="35dp"
+                android:layout_marginTop="3dp"
+                android:fontFamily="@font/roboto_regular"
+                android:gravity="center_vertical"
+                android:text="@string/want_end_session"
+                android:textColor="@color/black"
+                android:textSize="13dp" />
+
+            <RadioButton
+                android:id="@+id/radio_complete_state"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_title_state"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginRight="10dp"
+                android:checked="true"
+                android:text="@string/complete"
+                android:textSize="13dp" />
+
+            <RadioButton
+                android:id="@+id/radio_reschedule_state"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_title_state"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="4dp"
+                android:layout_toRightOf="@id/radio_complete_state"
+                android:text="@string/reschedule"
+                android:textSize="13dp" />
+
+            <RadioButton
+                android:id="@+id/radio_interrupted_state"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/radio_complete_state"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="3dp"
+                android:text="@string/interrupted"
+                android:textSize="13dp" />
+
+            <Button
+                android:id="@+id/btn_submit_state"
+                android:layout_width="wrap_content"
+                android:layout_height="26dp"
+                android:layout_below="@id/radio_reschedule_state"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="3dp"
+                android:background="@drawable/round_red_rect"
+                android:text="@string/submit"
+                android:textColor="@color/white"
+                android:textSize="13dp" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/iv_chat_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black"
+        android:onClick="onClick"
+        android:visibility="gone" />
+</RelativeLayout>

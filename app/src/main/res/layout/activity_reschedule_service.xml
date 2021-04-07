@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/iv_back"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="30dp"
+        android:padding="5dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/icon_black_left_arrow2" />
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:layout_marginTop="36dp"
+        android:text="@string/reschedule"
+        android:textAllCaps="true"
+        android:textColor="@color/black"
+        android:textSize="14dp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="120dp"
+        >
+
+        <LinearLayout
+            android:id="@+id/li_assign_date_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="15dp"
+            android:layout_marginTop="15dp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:gravity="left"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/appointment_date"
+                    android:textColor="@color/text_gray_color"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:id="@+id/tv_assign_date"
+                    style="@style/EditTextStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp45"
+                    android:layout_below="@id/tv_title_asset_name"
+                    android:layout_marginTop="3dp"
+                    android:background="@drawable/round_grey_border_5dp"
+                    android:gravity="center"
+                    android:hint="@string/select"
+                    android:paddingHorizontal="10dp"
+                    android:textColor="@color/black" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:gravity="left"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/appointment_time"
+                    android:textColor="@color/text_gray_color"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:id="@+id/tv_assign_time"
+                    style="@style/EditTextStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp45"
+                    android:layout_below="@id/tv_title_asset_name"
+                    android:layout_marginTop="3dp"
+                    android:background="@drawable/round_grey_border_5dp"
+                    android:gravity="center"
+                    android:hint="@string/select"
+                    android:paddingHorizontal="10dp"
+                    android:textColor="@color/black" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/li_duration"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/li_assign_date_time"
+            android:layout_marginHorizontal="15dp"
+            android:layout_marginTop="15dp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:gravity="left"
+                android:orientation="vertical">
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/li_assign_date_time"
+                android:layout_marginLeft="10dp"
+                android:gravity="left"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/duration"
+                    android:textColor="@color/text_gray_color"
+                    android:textSize="15dp" />
+
+                <EditText
+                    android:id="@+id/et_duration_time"
+                    style="@style/EditTextStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp45"
+                    android:layout_below="@id/tv_title_asset_name"
+                    android:layout_marginTop="3dp"
+                    android:background="@drawable/round_grey_border_5dp"
+                    android:gravity="center"
+                    android:hint="@string/duration"
+                    android:maxLength="3"
+                    android:paddingHorizontal="10dp"
+                    android:textColor="@color/black" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_reschedule"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_below="@id/li_duration"
+            android:layout_centerHorizontal="true"
+            android:layout_marginHorizontal="25dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="30dp"
+            android:background="@drawable/round_dark_red_rect"
+            android:text="@string/reschedule"
+            android:textColor="@color/white"
+            android:textSize="15dp"
+            android:textStyle="bold" />
+
+
+    </RelativeLayout>
+    <!--        </LinearLayout>-->
+</RelativeLayout>

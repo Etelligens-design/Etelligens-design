@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1011642098867",
+    "project_id": "ete-mpv",
+    "storage_bucket": "ete-mpv.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1011642098867:android:1ff7cc60906540117dbcc6",
+        "android_client_info": {
+          "package_name": "com.pch.ete"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1011642098867-ukp4nvue9cuhuun5aqhr214ihceaip67.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA48RC04vl8j6c9CZZ25AlFj-XwKZKgpUU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1011642098867-ukp4nvue9cuhuun5aqhr214ihceaip67.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
